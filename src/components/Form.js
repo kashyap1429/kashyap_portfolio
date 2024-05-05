@@ -1,9 +1,10 @@
 import "./FormStyles.css";
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Form = () => {
   const form = useRef();
+  const [message, setMessage] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,13 +19,15 @@ const Form = () => {
       .then(
         (result) => {
           console.log(result.text);
-          console.log("Message sent")
+          setMessage("Message sent");
+          // Clear form fields
+          form.current.reset();
         },
         (error) => {
           console.log('FAILED...', error.text);
         },
       );
-    };
+  };
 
   return (
     <div className="form">
@@ -39,8 +42,9 @@ const Form = () => {
             <textarea name="message" rows="6" placeholder="Type your message here"/><br/>
             <button className="btn">Submit</button>
         </form>
+        {message && <div>{message}</div>}
     </div>
   );
 };
 
-export default Form
+export default Form;
