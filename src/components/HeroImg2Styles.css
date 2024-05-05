@@ -1,0 +1,44 @@
+.hero-img{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: 60vh;
+    position: relative;
+}
+
+.hero-img::before{
+    content: "";
+    background: url("https://img.freepik.com/premium-photo/photo-business-people-working-with-data-analysis-financial-analysis-business-analysis_763111-128913.jpg?w=740");
+    background-size: cover;
+    background-position: center top;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/* https://imgs.search.brave.com/LxfGwyza_X3P1CHk79kZcsvTYvfsKQL1sj9AT884apk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzYyLzE3LzM3/LzM2MF9GXzI2MjE3/Mzc2NF8zc3hsbDQ1/U09hR1A1dUVDN1B1/a1YzTEhPQjdIOGRw/Mi5qcGc */
+.heading{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img h1{
+    font-size: 2.4rem;
+}
+
+.hero-img p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .hero-img h1{
+        font-size: 2rem;
+    }
+}
